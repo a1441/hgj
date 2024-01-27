@@ -267,23 +267,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3105017454309476979, guid: 174f5dc64450cf4b0a56d734421c3c47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2878563
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3105017454309476979, guid: 174f5dc64450cf4b0a56d734421c3c47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2121
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3105017454309476979, guid: 174f5dc64450cf4b0a56d734421c3c47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2121
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3105017454309476979, guid: 174f5dc64450cf4b0a56d734421c3c47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08655
+      value: -0.72
       objectReference: {fileID: 0}
     - target: {fileID: 3105017454309476979, guid: 174f5dc64450cf4b0a56d734421c3c47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.22
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 3105017454309476979, guid: 174f5dc64450cf4b0a56d734421c3c47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -834,11 +834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5942546157766127241, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.22
+      value: -5.61
       objectReference: {fileID: 0}
     - target: {fileID: 5942546157766127241, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.64
+      value: -2.03
       objectReference: {fileID: 0}
     - target: {fileID: 5942546157766127241, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -933,6 +933,7 @@ MonoBehaviour:
   startPoint: {fileID: 1416364240}
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
+  characterAnimator: {fileID: 0}
 --- !u!114 &1022231672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1084,7 @@ MonoBehaviour:
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
+  characterAnimator: {fileID: 0}
 --- !u!114 &1054441286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,11 +1331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5942546157766127241, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.72
+      value: 6.31
       objectReference: {fileID: 0}
     - target: {fileID: 5942546157766127241, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.67
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 5942546157766127241, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1428,6 +1430,7 @@ MonoBehaviour:
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
+  characterAnimator: {fileID: 0}
 --- !u!114 &1343881831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,6 +1698,7 @@ MonoBehaviour:
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 543530032}
+  characterAnimator: {fileID: 0}
 --- !u!114 &1690935211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1989,6 +1993,7 @@ MonoBehaviour:
   startPoint: {fileID: 1416364240}
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
+  characterAnimator: {fileID: 0}
 --- !u!114 &1826586171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,6 +2283,7 @@ MonoBehaviour:
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
+  characterAnimator: {fileID: 0}
 --- !u!114 &2033879036
 MonoBehaviour:
   m_ObjectHideFlags: 0
