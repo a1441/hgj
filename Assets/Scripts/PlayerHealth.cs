@@ -21,16 +21,25 @@ public class CharacterHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             Die();
         }
 
         UpdateHealthText(); // Call this method whenever health changes.
     }
+private void Die()
+{
+    // Access the Animator component
+    Animator animator = GetComponent<Animator>();
 
-    private void Die()
+    if (animator != null)
     {
-        // Implement death behavior here.
+        // Trigger the "Die" animation
+        animator.SetTrigger("die");
     }
+
+    // Implement any other death behavior here.
+}
 
     // Method to update the UI Text with the current health value
     private void UpdateHealthText()

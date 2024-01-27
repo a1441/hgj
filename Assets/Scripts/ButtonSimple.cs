@@ -40,7 +40,7 @@ public class RandomTextButton : MonoBehaviour
             // Check if the animator is assigned
             if (animator != null)
             {
-                animator.SetTrigger("EggplantTrigger");
+                animator.SetTrigger("EggplantTriggerLeft");
             }
             else
             {

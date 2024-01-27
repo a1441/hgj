@@ -23,7 +23,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: EggplantTrigger
+    m_ConditionEvent: EggplantTriggerLeft
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7833205134983923401}
@@ -48,7 +48,7 @@ AnimatorController:
   m_Name: EggplantAnimator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: EggplantTrigger
+  - m_Name: EggplantTriggerLeft
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
