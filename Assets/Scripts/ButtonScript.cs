@@ -32,34 +32,36 @@ public class ChangeButtonText : MonoBehaviour
 
     public float fadeDuration = 0.5f; // Duration of the fade effect in seconds
 
+    public Animator eggplantAnimator; // Reference to the eggplant's Animator
+
     private Button button;
     private CanvasGroup canvasGroup;
 
     void Start()
     {
-    button = GetComponent<Button>();
-    canvasGroup = GetComponent<CanvasGroup>();
-    TMP_Text textComponent = GetComponentInChildren<TMP_Text>(); // Ensure this is present.
+        button = GetComponent<Button>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        TMP_Text textComponent = GetComponentInChildren<TMP_Text>(); // Ensure this is present.
 
-    if (button == null)
-    {
-        Debug.LogError("Button component not found on the object.");
-        return;
-    }
-    if (textComponent == null)
-    {
-        Debug.LogError("TMP_Text component not found as a child of the button object.");
-        return;
-    }
-    if (canvasGroup == null)
-    {
-        Debug.LogError("CanvasGroup component not found on the button object. Please add one.");
-        return;
-    }
+        if (button == null)
+        {
+            Debug.LogError("Button component not found on the object.");
+            return;
+        }
+        if (textComponent == null)
+        {
+            Debug.LogError("TMP_Text component not found as a child of the button object.");
+            return;
+        }
+        if (canvasGroup == null)
+        {
+            Debug.LogError("CanvasGroup component not found on the button object. Please add one.");
+            return;
+        }
 
-    button.onClick.AddListener(() => StartCoroutine(ChangeTextWithFade()));
-    ChangeText(); // Set the initial text from the phrases list.
-    canvasGroup.alpha = 1; // Ensure the button is fully visible after setting the text.
+        button.onClick.AddListener(() => StartCoroutine(ChangeTextWithFade()));
+        ChangeText(); // Set the initial text from the phrases list.
+        canvasGroup.alpha = 1; // Ensure the button is fully visible after setting the text.
     }
 
     IEnumerator ChangeTextWithFade()
@@ -68,6 +70,12 @@ public class ChangeButtonText : MonoBehaviour
         yield return FadeOut(canvasGroup, fadeDuration);
         ChangeText();
         yield return FadeIn(canvasGroup, fadeDuration);
+
+        // Check if the new text is "Potato Face" and trigger the eggplant animation
+        if (button.GetComponentInChildren<TMP_Text>().text == "Potato face" && eggplantAnimator != null)
+        {
+            eggplantAnimator.SetTrigger("PlayEggplantAnimation");
+        }
     }
 
     void ChangeText()
