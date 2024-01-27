@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GenericButton Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 506918812562037761, guid: 74792e47b6ba82748a9dfeaff74de1f5, type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3895654395903299694, guid: 74792e47b6ba82748a9dfeaff74de1f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -102,6 +106,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 356250577071619037, guid: 74792e47b6ba82748a9dfeaff74de1f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4867164607852106873}
+    - targetCorrespondingSourceObject: {fileID: 356250577071619037, guid: 74792e47b6ba82748a9dfeaff74de1f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5351921173256926605}
   m_SourcePrefab: {fileID: 100100000, guid: 74792e47b6ba82748a9dfeaff74de1f5, type: 3}
 --- !u!1 &6165151867528435784 stripped
 GameObject:
@@ -142,6 +149,7 @@ MonoBehaviour:
   - Sloth breath
   - Sock puppet
   fadeDuration: 0.5
+  eggplantAnimator: {fileID: 0}
 --- !u!225 &4867164607852106873
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -154,3 +162,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!95 &5351921173256926605
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165151867528435784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 127483ee56f158d4f832fdd3e4fa9131, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
