@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
 public class ButtonLeft1 : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ButtonLeft1 : MonoBehaviour
     [SerializeField] public CharacterHealth characterHealth;
 
     public Animator characterAnimator;
+
+    private KeywordRecognizer recognizer;
+    private ConfidenceLevel confidence = ConfidenceLevel.Low;
+    public string obida;
 
     public void SpawnAndMovePrefab()
     {
@@ -39,6 +44,30 @@ public class ButtonLeft1 : MonoBehaviour
                 // Start moving the prefab
                 mover.enabled = true;
             }
+        }
+    }
+
+    void Start()
+    {
+        if (obida != "")
+        {
+            string[] keywords = new string[] {obida};
+            recognizer = new KeywordRecognizer(keywords, confidence);
+            recognizer.OnPhraseRecognized += Recognizer_OnPhraseRecognized;
+            recognizer.Start();
+        }
+    }
+    private void Recognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
+    {
+        Debug.Log(args.text);
+        SpawnAndMovePrefab();
+    }
+    private void OnApplicationQuit()
+    {
+        if (recognizer != null && recognizer.IsRunning)
+        {
+            recognizer.OnPhraseRecognized -= Recognizer_OnPhraseRecognized;
+            recognizer.Stop();
         }
     }
 }

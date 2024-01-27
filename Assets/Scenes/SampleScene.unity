@@ -933,7 +933,7 @@ MonoBehaviour:
   startPoint: {fileID: 1416364240}
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
-  characterAnimator: {fileID: 0}
+  characterAnimator: {fileID: 1503882881}
 --- !u!114 &1022231672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,6 +1535,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2521711336578497674, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
   m_PrefabInstance: {fileID: 916307538}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1503882881 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3729404322294773028, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
+  m_PrefabInstance: {fileID: 916307538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1672296652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1703,7 @@ MonoBehaviour:
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 543530032}
-  characterAnimator: {fileID: 0}
+  characterAnimator: {fileID: 1503882881}
 --- !u!114 &1690935211
 MonoBehaviour:
   m_ObjectHideFlags: 0
