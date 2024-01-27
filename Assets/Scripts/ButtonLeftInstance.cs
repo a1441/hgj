@@ -10,8 +10,17 @@ public class ButtonLeft1 : MonoBehaviour
 
     [SerializeField] public CharacterHealth characterHealth;
 
+    public Animator characterAnimator;
+
     public void SpawnAndMovePrefab()
     {
+        StartCoroutine(doStuff());
+    }
+
+    IEnumerator doStuff()
+    {
+        characterAnimator.Play("attack3");
+        yield return new WaitForSeconds(1);
         if (prefabToSpawn != null)
         {
             // Instantiate the prefab
