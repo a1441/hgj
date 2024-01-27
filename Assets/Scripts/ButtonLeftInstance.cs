@@ -24,7 +24,12 @@ public class ButtonLeft1 : MonoBehaviour
 
     IEnumerator doStuff()
     {
-        characterAnimator.Play("attack3");
+        int[] attackIndices = {1, 3, 4}; // Array of the possible attack indices
+        int randomIndex = attackIndices[Random.Range(0, attackIndices.Length)]; // Randomly select an index
+        string attackAnimationName = "attack" + randomIndex; // Construct the animation name
+
+        characterAnimator.Play(attackAnimationName); // Play the animation
+
         yield return new WaitForSeconds(1);
         if (prefabToSpawn != null)
         {

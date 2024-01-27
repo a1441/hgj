@@ -1201,6 +1201,7 @@ MonoBehaviour:
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
   characterAnimator: {fileID: 945590250}
+  obida: 
 --- !u!114 &1022231672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,6 +1428,7 @@ MonoBehaviour:
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
   characterAnimator: {fileID: 543530033}
+  obida: 
 --- !u!114 &1054441286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1870,7 @@ MonoBehaviour:
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
   characterAnimator: {fileID: 543530033}
+  obida: 
 --- !u!114 &1343881831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2529,10 +2532,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 5584352504326165340, guid: 69d89de4f8cbd574583eb52379d2647e, type: 3}
-  startPoint: {fileID: 1918490992}
-  endPoint: {fileID: 1744997658}
+  startPoint: {fileID: 1416364240}
+  endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
   characterAnimator: {fileID: 945590250}
+  obida: 
 --- !u!114 &1690935211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2828,6 +2832,7 @@ MonoBehaviour:
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
   characterAnimator: {fileID: 945590250}
+  obida: 
 --- !u!114 &1826586171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3193,6 +3198,7 @@ MonoBehaviour:
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
   characterAnimator: {fileID: 543530033}
+  obida: 
 --- !u!114 &2033879036
 MonoBehaviour:
   m_ObjectHideFlags: 0
