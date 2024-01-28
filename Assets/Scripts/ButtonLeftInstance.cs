@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 
 using TMPro;
@@ -33,11 +34,29 @@ public class ButtonLeft1 : MonoBehaviour
     private KeywordRecognizer recognizer;
     private ConfidenceLevel confidence = ConfidenceLevel.Low;
     public string obida;
+
+    public void setText()
+    {
+        // Find the TextMeshProUGUI component in the child GameObject
+        TextMeshProUGUI t = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        // Your array of phrases
+        string[] obidi =  { "u stoopid", "smelly", "fatso", "garden gnome", "lil goblin", "short", "beak", "fart smella", "smelly socks", "huge nose", "big head", "fat goblin", "chicken legs", "no brain", "ugly", "ugly goblin", "smelly goblin", "fat pig", "fat cow", "ugly pig" };
+
+        // Randomly select a phrase
+        int randomObidaIndex = Random.Range(0, obidi.Length);
+        string izbranaObida = obidi[randomObidaIndex];
+
+        // Set the text of the TextMeshProUGUI component
+        t.text = izbranaObida;
+        obida = izbranaObida;
+    }
     
 
     public void SpawnAndMovePrefab()
     {
         var prefabToSpawn = prefabOptions[Random.Range(0, prefabOptions.Length)];
+        setText();
 
         StartCoroutine(doStuff(prefabToSpawn));
     }
@@ -74,6 +93,7 @@ public class ButtonLeft1 : MonoBehaviour
 
    void Start()
     {
+        setText();
         // SetRandomText();
         // Initialize the array with your GameObjects
         prefabOptions = new GameObject[] { pika, pepe, chicken, fatass, grandma, pig, sock };
