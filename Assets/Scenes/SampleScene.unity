@@ -481,6 +481,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &329253282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3896347336751836792, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
+  m_PrefabInstance: {fileID: 916307538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &332318067
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +883,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7825316123542481877, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
   m_PrefabInstance: {fileID: 1314871760}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1079374683}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b380eff2ed48d8b4197420285f4dadcd, type: 3}
@@ -894,7 +899,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7825316123542481877, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
   m_PrefabInstance: {fileID: 916307538}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 329253282}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b380eff2ed48d8b4197420285f4dadcd, type: 3}
@@ -953,6 +958,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7825316123542481877, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
+      propertyPath: damageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0849cb73fd637ba468d2e916d03ac752, type: 3}
+    - target: {fileID: 7825316123542481877, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: currentHealth
       value: 50
       objectReference: {fileID: 0}
@@ -967,13 +976,68 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3896347336751836792, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 945590252}
   m_SourcePrefab: {fileID: 100100000, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
 --- !u!95 &945590250 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3729404322294773028, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
   m_PrefabInstance: {fileID: 916307538}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &945590252
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329253282}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &950365300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd3e417c53250649835ffe6551577db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5584352504326165340, guid: 69d89de4f8cbd574583eb52379d2647e, type: 3}
+  chicken: {fileID: 5584352504326165340, guid: 4e299843c7c8ab14fa0781af8f9a6e6d, type: 3}
+  fatass: {fileID: 5584352504326165340, guid: 32f79e65acde283499a70feb6e3d45f3, type: 3}
+  grandma: {fileID: 5584352504326165340, guid: 68e54cdc5bac14b43ac3a137d6845876, type: 3}
+  pig: {fileID: 5584352504326165340, guid: 08db19f71d53eaa49b63e75dd684ac84, type: 3}
+  sock: {fileID: 5584352504326165340, guid: 0de2414c8bd4aa24985b145c6b791261, type: 3}
+  pepe: {fileID: 5584352504326165340, guid: ce2806d907342fe4da9b37fee18bb44e, type: 3}
+  pika: {fileID: 5584352504326165340, guid: f91a836cdcb56eb4391ee21cf6794ccd, type: 3}
   startPoint: {fileID: 1416364240}
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
@@ -1423,7 +1493,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd3e417c53250649835ffe6551577db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5584352504326165340, guid: 69d89de4f8cbd574583eb52379d2647e, type: 3}
+  chicken: {fileID: 5584352504326165340, guid: 4e299843c7c8ab14fa0781af8f9a6e6d, type: 3}
+  fatass: {fileID: 5584352504326165340, guid: 32f79e65acde283499a70feb6e3d45f3, type: 3}
+  grandma: {fileID: 5584352504326165340, guid: 68e54cdc5bac14b43ac3a137d6845876, type: 3}
+  pig: {fileID: 5584352504326165340, guid: 08db19f71d53eaa49b63e75dd684ac84, type: 3}
+  sock: {fileID: 5584352504326165340, guid: 0de2414c8bd4aa24985b145c6b791261, type: 3}
+  pepe: {fileID: 5584352504326165340, guid: ce2806d907342fe4da9b37fee18bb44e, type: 3}
+  pika: {fileID: 5584352504326165340, guid: f91a836cdcb56eb4391ee21cf6794ccd, type: 3}
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
@@ -1523,6 +1599,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054441283}
   m_CullTransparentMesh: 1
+--- !u!1 &1079374683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3896347336751836792, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
+  m_PrefabInstance: {fileID: 1314871760}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1079374685
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079374683}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1083878813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,13 +1938,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7825316123542481877, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
+      propertyPath: damageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0849cb73fd637ba468d2e916d03ac752, type: 3}
+    - target: {fileID: 7825316123542481877, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
       propertyPath: healthBarSlider
       value: 
       objectReference: {fileID: 1083878814}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3896347336751836792, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1079374685}
   m_SourcePrefab: {fileID: 100100000, guid: 96e5eafeea11c4f43b233de0e6f7ca2e, type: 3}
 --- !u!1 &1343881828
 GameObject:
@@ -1865,7 +2005,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd3e417c53250649835ffe6551577db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5584352504326165340, guid: 69d89de4f8cbd574583eb52379d2647e, type: 3}
+  chicken: {fileID: 5584352504326165340, guid: 4e299843c7c8ab14fa0781af8f9a6e6d, type: 3}
+  fatass: {fileID: 5584352504326165340, guid: 32f79e65acde283499a70feb6e3d45f3, type: 3}
+  grandma: {fileID: 5584352504326165340, guid: 68e54cdc5bac14b43ac3a137d6845876, type: 3}
+  pig: {fileID: 5584352504326165340, guid: 08db19f71d53eaa49b63e75dd684ac84, type: 3}
+  sock: {fileID: 5584352504326165340, guid: 0de2414c8bd4aa24985b145c6b791261, type: 3}
+  pepe: {fileID: 5584352504326165340, guid: ce2806d907342fe4da9b37fee18bb44e, type: 3}
+  pika: {fileID: 5584352504326165340, guid: f91a836cdcb56eb4391ee21cf6794ccd, type: 3}
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
@@ -2370,6 +2516,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501449837}
   m_CullTransparentMesh: 1
+--- !u!1 &1567171374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567171376}
+  - component: {fileID: 1567171375}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1567171375
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567171374}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8ed78c985edec7b4084a230ab997c28e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1567171376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567171374}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 368.82254, y: 751.3043, z: -0.19218723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1672296652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,7 +2805,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd3e417c53250649835ffe6551577db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5584352504326165340, guid: 69d89de4f8cbd574583eb52379d2647e, type: 3}
+  chicken: {fileID: 5584352504326165340, guid: 4e299843c7c8ab14fa0781af8f9a6e6d, type: 3}
+  fatass: {fileID: 5584352504326165340, guid: 32f79e65acde283499a70feb6e3d45f3, type: 3}
+  grandma: {fileID: 5584352504326165340, guid: 68e54cdc5bac14b43ac3a137d6845876, type: 3}
+  pig: {fileID: 5584352504326165340, guid: 08db19f71d53eaa49b63e75dd684ac84, type: 3}
+  sock: {fileID: 5584352504326165340, guid: 0de2414c8bd4aa24985b145c6b791261, type: 3}
+  pepe: {fileID: 5584352504326165340, guid: ce2806d907342fe4da9b37fee18bb44e, type: 3}
+  pika: {fileID: 5584352504326165340, guid: f91a836cdcb56eb4391ee21cf6794ccd, type: 3}
   startPoint: {fileID: 1416364240}
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
@@ -2827,7 +3107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd3e417c53250649835ffe6551577db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5584352504326165340, guid: 69d89de4f8cbd574583eb52379d2647e, type: 3}
+  chicken: {fileID: 5584352504326165340, guid: 4e299843c7c8ab14fa0781af8f9a6e6d, type: 3}
+  fatass: {fileID: 5584352504326165340, guid: 32f79e65acde283499a70feb6e3d45f3, type: 3}
+  grandma: {fileID: 5584352504326165340, guid: 68e54cdc5bac14b43ac3a137d6845876, type: 3}
+  pig: {fileID: 5584352504326165340, guid: 08db19f71d53eaa49b63e75dd684ac84, type: 3}
+  sock: {fileID: 5584352504326165340, guid: 0de2414c8bd4aa24985b145c6b791261, type: 3}
+  pepe: {fileID: 5584352504326165340, guid: ce2806d907342fe4da9b37fee18bb44e, type: 3}
+  pika: {fileID: 5584352504326165340, guid: f91a836cdcb56eb4391ee21cf6794ccd, type: 3}
   startPoint: {fileID: 1416364240}
   endPoint: {fileID: 1766837530}
   characterHealth: {fileID: 543530032}
@@ -3193,7 +3479,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd3e417c53250649835ffe6551577db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5584352504326165340, guid: 69d89de4f8cbd574583eb52379d2647e, type: 3}
+  chicken: {fileID: 5584352504326165340, guid: 4e299843c7c8ab14fa0781af8f9a6e6d, type: 3}
+  fatass: {fileID: 5584352504326165340, guid: 32f79e65acde283499a70feb6e3d45f3, type: 3}
+  grandma: {fileID: 5584352504326165340, guid: 68e54cdc5bac14b43ac3a137d6845876, type: 3}
+  pig: {fileID: 5584352504326165340, guid: 08db19f71d53eaa49b63e75dd684ac84, type: 3}
+  sock: {fileID: 5584352504326165340, guid: 0de2414c8bd4aa24985b145c6b791261, type: 3}
+  pepe: {fileID: 5584352504326165340, guid: ce2806d907342fe4da9b37fee18bb44e, type: 3}
+  pika: {fileID: 5584352504326165340, guid: f91a836cdcb56eb4391ee21cf6794ccd, type: 3}
   startPoint: {fileID: 1918490992}
   endPoint: {fileID: 1744997658}
   characterHealth: {fileID: 619381560}
@@ -3394,3 +3686,4 @@ SceneRoots:
   - {fileID: 383909290}
   - {fileID: 916307538}
   - {fileID: 1314871760}
+  - {fileID: 1567171376}

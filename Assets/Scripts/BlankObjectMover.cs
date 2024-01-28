@@ -5,8 +5,8 @@ public class ObjectMover : MonoBehaviour
     [SerializeField] public Transform startPoint; // The starting point
     [SerializeField] public Transform controlPoint; // The control point for the arc
     [SerializeField] public Transform endPoint;   // The ending point
-    [SerializeField] public float speed = 1.0f;  // Speed of movement
-    [SerializeField] public float rotationSpeed = 90.0f; // Speed of rotation (degrees per second)
+    [SerializeField] public float speed = 0.60f;  // Speed of movement
+    [SerializeField] public float rotationSpeed = 10.0f; // Speed of rotation (degrees per second)
 
     private float journeyLength;
     private float startTime;

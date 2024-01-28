@@ -12,6 +12,11 @@ public class CharacterHealth : MonoBehaviour
     // Reference to the UI Slider for the health bar
     public Slider healthBarSlider;
 
+    // Reference to the damage sound effect
+    public AudioClip damageSound;
+    private AudioSource audioSource; // for general sounds
+    private AudioSource damageAudioSource; // specifically for damage sound
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -24,6 +29,14 @@ public class CharacterHealth : MonoBehaviour
         }
 
         UpdateHealthText(); // Initialize the UI Text with the current health
+
+        // Initialize the general audio source
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+        // Initialize the damage audio source and calculate volume based on damage
+        damageAudioSource = gameObject.AddComponent<AudioSource>();
+        float volume = Mathf.Clamp((float)currentHealth / maxHealth, 0.1f, 1.0f) * 0.5f;
+        damageAudioSource.volume = volume;
     }
 
     private void Update()
@@ -34,6 +47,14 @@ public class CharacterHealth : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
+
+        // Play damage sound using the dedicated damage audio source
+        if (damageSound != null && damageAudioSource != null)
+        {
+            float volume = Mathf.Clamp((float)currentHealth / maxHealth, 0.1f, 1.0f) * 0.1f;
+            damageAudioSource.volume = volume;
+            damageAudioSource.PlayOneShot(damageSound);
+        }
 
         if (currentHealth <= 0)
         {

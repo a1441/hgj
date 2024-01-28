@@ -3,9 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
+using TMPro;
 public class ButtonLeft1 : MonoBehaviour
 {
-    [SerializeField] public GameObject prefabToSpawn;  // Reference to the prefab to spawn
+    private string[] phrases = new string[] {
+        "u stoopid", "smelly", "fatso", "garden gnome", "lil goblin", "short", 
+        "beak", "fart smella", "smelly socks", "huge nose", "big head", "fat goblin", 
+        "chicken legs", "no brain", "ugly", "ugly goblin", "smelly goblin", 
+        "fat pig", "fat cow", "ugly pig"
+    };
+    private GameObject[] prefabOptions;
+
+    [SerializeField] public GameObject chicken;
+    [SerializeField] public GameObject fatass; // Reference to the
+    [SerializeField] public GameObject grandma;
+    [SerializeField] public GameObject pig;
+    [SerializeField] public GameObject sock;
+
+    [SerializeField] public GameObject pepe;
+    [SerializeField] public GameObject pika;
+
     [SerializeField] public Transform startPoint;      // Starting point
     [SerializeField] public Transform endPoint;        // Ending point
 
@@ -16,13 +33,16 @@ public class ButtonLeft1 : MonoBehaviour
     private KeywordRecognizer recognizer;
     private ConfidenceLevel confidence = ConfidenceLevel.Low;
     public string obida;
+    
 
     public void SpawnAndMovePrefab()
     {
-        StartCoroutine(doStuff());
+        var prefabToSpawn = prefabOptions[Random.Range(0, prefabOptions.Length)];
+
+        StartCoroutine(doStuff(prefabToSpawn));
     }
 
-    IEnumerator doStuff()
+    IEnumerator doStuff(GameObject prefabToSpawn)
     {
         int[] attackIndices = {1, 3, 4}; // Array of the possible attack indices
         int randomIndex = attackIndices[Random.Range(0, attackIndices.Length)]; // Randomly select an index
@@ -52,16 +72,24 @@ public class ButtonLeft1 : MonoBehaviour
         }
     }
 
-    void Start()
+   void Start()
     {
+        // SetRandomText();
+        // Initialize the array with your GameObjects
+        prefabOptions = new GameObject[] { pika, pepe, chicken, fatass, grandma, pig, sock };
+
+        // Randomly select one of the GameObjects
+
         if (obida != "")
         {
-            string[] keywords = new string[] {obida};
+            string[] keywords = new string[] { obida };
             recognizer = new KeywordRecognizer(keywords, confidence);
             recognizer.OnPhraseRecognized += Recognizer_OnPhraseRecognized;
             recognizer.Start();
         }
+        
     }
+
     private void Recognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         Debug.Log(args.text);
