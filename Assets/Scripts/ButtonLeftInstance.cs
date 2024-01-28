@@ -7,13 +7,7 @@ using UnityEngine.Windows.Speech;
 using TMPro;
 public class ButtonLeft1 : MonoBehaviour
 {
-    private string[] phrases = new string[] {
-        "u stoopid", "smelly", "fatso", "garden gnome", "lil goblin", "short", 
-        "beak", "fart smella", "smelly socks", "huge nose", "big head", "fat goblin", 
-        "chicken legs", "no brain", "ugly", "ugly goblin", "smelly goblin", 
-        "fat pig", "fat cow", "ugly pig"
-    };
-    private GameObject[] prefabOptions;
+
 
     [SerializeField] public GameObject chicken;
     [SerializeField] public GameObject fatass; // Reference to the
@@ -21,8 +15,16 @@ public class ButtonLeft1 : MonoBehaviour
     [SerializeField] public GameObject pig;
     [SerializeField] public GameObject sock;
 
-    [SerializeField] public GameObject pepe;
-    [SerializeField] public GameObject pika;
+    [SerializeField] public GameObject brain;
+    [SerializeField] public GameObject cow;
+ 
+    [SerializeField] public GameObject ear;
+    
+    [SerializeField] public GameObject mouth;
+    
+    [SerializeField] public GameObject nose;
+    
+    [SerializeField] public GameObject sausage;   
 
     [SerializeField] public Transform startPoint;      // Starting point
     [SerializeField] public Transform endPoint;        // Ending point
@@ -30,9 +32,13 @@ public class ButtonLeft1 : MonoBehaviour
     [SerializeField] public CharacterHealth characterHealth;
 
     public Animator characterAnimator;
+    private static string[] obidi =  { "u stoopid", "smelly", "fatso", "garden gnome", "lil goblin", "short", "beak", "fart smella", "smelly socks",
+         "huge nose", "big head", "fat goblin", "chicken legs", "no brain", "ugly", "ugly goblin", "smelly goblin", "fat pig", "fat cow", "ugly pig" };
 
-    private KeywordRecognizer recognizer;
-    private ConfidenceLevel confidence = ConfidenceLevel.Low;
+    
+    private static ConfidenceLevel confidence = ConfidenceLevel.Low;
+
+    private static KeywordRecognizer recognizer;
     public string obida;
 
     public void setText()
@@ -41,7 +47,7 @@ public class ButtonLeft1 : MonoBehaviour
         TextMeshProUGUI t = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
         // Your array of phrases
-        string[] obidi =  { "u stoopid", "smelly", "fatso", "garden gnome", "lil goblin", "short", "beak", "fart smella", "smelly socks", "huge nose", "big head", "fat goblin", "chicken legs", "no brain", "ugly", "ugly goblin", "smelly goblin", "fat pig", "fat cow", "ugly pig" };
+        
 
         // Randomly select a phrase
         int randomObidaIndex = Random.Range(0, obidi.Length);
@@ -52,10 +58,39 @@ public class ButtonLeft1 : MonoBehaviour
         obida = izbranaObida;
     }
     
+    private GameObject phraseToObject(string phrase){
+        return 
+            phrase == "u stoopid" ? brain : 
+            phrase == "smelly" ? pig: 
+            phrase == "fatso" ? fatass: 
+            phrase == "garden gnome" ? mouth: 
+            phrase == "lil goblin" ? grandma: 
+            phrase == "short" ? grandma: 
+            phrase == "beak" ? nose: 
+            phrase == "fart smella" ? pig: 
+            phrase == "smelly socks" ? sock: 
+
+            phrase == "huge nose" ? nose : 
+            phrase == "big head" ? mouth: 
+            phrase == "fat goblin" ? sausage: 
+            phrase == "chicken legs" ? chicken: 
+            phrase == "no brain" ? brain: 
+            phrase == "ugly" ? grandma: 
+            phrase == "ugly goblin" ? mouth: 
+            phrase == "smelly goblin" ? sock: 
+            phrase == "fat pig" ? fatass: 
+
+            phrase == "fat cow" ? sausage: 
+            phrase == "ugly pig" ? pig: 
+            
+            pig;
+    }
+
+    
 
     public void SpawnAndMovePrefab()
     {
-        var prefabToSpawn = prefabOptions[Random.Range(0, prefabOptions.Length)];
+        var prefabToSpawn = phraseToObject(obida);
         setText();
 
         StartCoroutine(doStuff(prefabToSpawn));
@@ -89,6 +124,7 @@ public class ButtonLeft1 : MonoBehaviour
                 mover.enabled = true;
             }
         }
+        
     }
 
    void Start()
@@ -96,14 +132,17 @@ public class ButtonLeft1 : MonoBehaviour
         setText();
         // SetRandomText();
         // Initialize the array with your GameObjects
-        prefabOptions = new GameObject[] { pika, pepe, chicken, fatass, grandma, pig, sock };
+        // prefabOptions = new GameObject[] { pika, pepe, chicken, fatass, grandma, pig, sock };
 
         // Randomly select one of the GameObjects
-
+        if (recognizer == null)
+        {
+recognizer = new KeywordRecognizer(obidi, confidence);
+        
+        }
         if (obida != "")
         {
-            string[] keywords = new string[] { obida };
-            recognizer = new KeywordRecognizer(keywords, confidence);
+               
             recognizer.OnPhraseRecognized += Recognizer_OnPhraseRecognized;
             recognizer.Start();
         }
@@ -113,8 +152,11 @@ public class ButtonLeft1 : MonoBehaviour
     private void Recognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         Debug.Log(args.text);
-        SpawnAndMovePrefab();
-    }
+        if(obida == args.text){
+SpawnAndMovePrefab();
+    
+        }
+        }
     private void OnApplicationQuit()
     {
         if (recognizer != null && recognizer.IsRunning)
